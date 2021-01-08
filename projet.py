@@ -3,6 +3,7 @@ from numpy.lib.shape_base import _replace_zero_by_x_arrays
 from numpy.linalg.linalg import get_linalg_error_extobj
 import matplotlib.pyplot as pp
 
+#DEFINITIONS
 
 def DecompositionGS(A):
     """ Calcul de la décomposition QR de A une matrice carrée.
@@ -148,19 +149,17 @@ def ResolMCNP(A, b):
     print(x, residuals, rank, s)
     return np.squeeze(np.asarray(x))
 
-
+#PROGRAMME
 
 #1.1 Avec les equations normales
 A = np.array([[1, 2], [2, 3], [-1, 2]])
 b = np.array([[12], [17], [6]])
 x = ResolMCEN(A, b)
 
-
 #1.2 Avec la decomposition QR
 A = np.array([[1, 21], [-1, -5], [1, 17], [1, 17]])
 b = np.array([3, -1, 1, 1])
 x = ResolMCQR(A, b)
-
 
 #1.3 La fonction de numpy
 A = np.array([[1, 21], [-1, -5], [1, 17], [1, 17]])
@@ -185,7 +184,6 @@ print("\nEX2 :\n")
 print("Par la méthode des équations normales :", ResolMCEN(A, b))
 print("Par la méthode de la décomposition QR :", ResolMCQR(A, b))
 print("Par la méthode de la fonction numpy   :", ResolMCNP(A, b))
-
 
 #Tests sur EX3
 #creation de A et b
